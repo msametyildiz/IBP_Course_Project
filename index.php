@@ -3,7 +3,7 @@
 @ob_start();
 define("DATA","data/");
 define("SAYFA","include/");
-define("SINIF","ibp_course_project_yonetimpaneli/class/");
+define("SINIF","yonetimpaneli/class/");
 include_once(DATA."baglanti.php");
 define("SITE", $siteURL);
 

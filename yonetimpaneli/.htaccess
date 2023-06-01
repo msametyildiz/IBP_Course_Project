@@ -4,7 +4,7 @@ Options -indexes
 RewriteEngine On
 # rewrite modulunu aktif ettim
 
-RewriteBase /IBP_Course_Project/ibp_course_project_yonetimpaneli
+RewriteBase /kurumsalsite/yonetimpaneli
 # çalıştığım dizinin yolunu kaydettim
 
 RewriteRule ^liste/(.*)$ index.php?sayfa=liste&tablo=$1 [NC]

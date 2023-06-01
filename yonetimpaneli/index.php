@@ -5,7 +5,7 @@ define("DATA","data/");
 define("SAYFA","include/");
 define("SINIF","class/");
 include_once(DATA."baglanti.php");
-define("SITE", $siteURL."ibp_course_project_yonetimpaneli/");
+define("SITE", $siteURL."yonetimpaneli/");
 if(!empty($_SESSION["ID"]) && !empty($_SESSION["adsoyad"]) && !empty($_SESSION["mail"])){
 
 }

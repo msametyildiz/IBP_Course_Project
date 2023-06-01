@@ -4,7 +4,7 @@ Options -indexes
 RewriteEngine On
 # rewrite modulunu aktif ettim
 
-RewriteBase /IBP_Course_Project/
+RewriteBase /kurumsalsite/
 # çalıştığım dizinin yolunu kaydettim
 
 RewriteRule ^kurumsal/(.*)$ index.php?sayfa=kurumsal&selflink=$1 [NC]

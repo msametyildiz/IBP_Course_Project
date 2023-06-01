@@ -20,5 +20,4 @@ if ($ayarlar!=false) {
 	$siteURL=$ayarlar[0]["url"];
 }
 
-
 ?>

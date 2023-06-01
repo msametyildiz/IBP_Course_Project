@@ -169,7 +169,7 @@
                             <div class="checkbox primary">
                                 <input type="checkbox" id="checkbox1" data-val="true" data-val-required="The Kvkk field is required." name="Kvkk" value="true" />
                                 <label for="checkbox1">
-                                    <a class="btn-link btn-primary pr-0" href="javascript;" onclick="window.open('<?=SITE?>kvkk', 'YILDIZ Kişisel Veriler Politikası', 'width=800,height=750'); return false;">YILDIZ Kişisel Veriler Politikası</a>'nı okudum ve onaylıyorum.
+                                    <a class="btn-link btn-primary pr-0" href="javascript;" onclick="window.open('<?=SITE?>kvkk', 'Necat Derneği Kişisel Veriler Politikası', 'width=800,height=750'); return false;">Necat Derneği Kişisel Veriler Politikası</a>'nı okudum ve onaylıyorum.
                                 </label>
                             </div>
                             <span class="text-danger field-validation-valid" data-valmsg-for="Kvkk" data-valmsg-replace="true"></span>

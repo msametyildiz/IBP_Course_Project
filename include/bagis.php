@@ -17,13 +17,13 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-12">
                             <div class="main-title text-center">
-                                <h3 class="mb-4" style="font-family:Raleway, sans-serif;">YILDIZ Bağışçısı Ol !</h3>
+                                <h3 class="mb-4" style="font-family:Raleway, sans-serif;">Necat Derneği Bağışçısı Ol !</h3>
                                 <div class="main-subtitle-top mb-4"><?= $kontrol[0]["bankaadi"] ?></div>
                                 <h6 style="font-weight: bold;">HESAP ADI: <?= $kontrol[0]["hesapadi"] ?></h6>
-                                <div class="main-subtitle-top mb-4" style="opacity: 0.7;">YILDIZ’ne yurtdışından bağış yapmak isteyenlerin dikkatine!</div>
-                                <div class="main-subtitle-bottom mt-3" style="opacity: 0.7;">Dünyanın her yerindeki bankalardan YILDIZ resmî banka hesaplarına, döviz havalesi gönderilebilmektedir.</div>
+                                <div class="main-subtitle-top mb-4" style="opacity: 0.7;">Necat Derneği’ne yurtdışından bağış yapmak isteyenlerin dikkatine!</div>
+                                <div class="main-subtitle-bottom mt-3" style="opacity: 0.7;">Dünyanın her yerindeki bankalardan Necat derneği resmî banka hesaplarına, döviz havalesi gönderilebilmektedir.</div>
                                 <div class="main-subtitle-bottom mt-3" style="opacity: 0.7;">Yurtdışından yapılacak ödemeler için: Swift Kodu “<strong><?= $kontrol[0]["swiftkodu"] ?></strong>”</div>
-                                <div class="mt-3" style="opacity: 0.7;">YILDIZ yardımlarını, projelerini sürdürülebilir kılmak için YILDIZ’ne ait hesap numaralarımız:</div>
+                                <div class="mt-3" style="opacity: 0.7;">Necat yardımlarını, projelerini sürdürülebilir kılmak için Necat Derneği’ne ait hesap numaralarımız:</div>
                             </div>
                         </div>
                         <div class="clear"></div>

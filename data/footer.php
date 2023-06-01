@@ -59,7 +59,7 @@
                     <div class="col-xl-4 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                            YILDIZ</h3>
+                            NECAT SOSYAL YARDIMLAŞMA EĞİTİM KÜLTÜR VE TURİZM DERNEĞİ</h3>
                             <ul style="display:inline-block;">
                                 <li><a href="<?= SITE ?>kurumsal/hakkimizda">Hakkımızda</a></li>
                                 <li><a href="<?= SITE ?>kurumsal/misyonumuz">Misyonumuz</a></li>

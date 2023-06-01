@@ -24,7 +24,7 @@
 
                         </div>
                         <div id="icerik" style="position: absolute;	top: 50%;left: 40%;transform:translate(-50%,-50%);color: white;	font-size: 20px;">
-                            <h2 style="font-family: 'Alkalami', serif;color:black;">YILDIZ</h2><br>
+                            <h2 style="font-family: 'Alkalami', serif;color:black;">NECAT SOSYAL YARDIMLAŞMA EĞİTİM KÜLTÜR VE TURİZM DERNEĞİ</h2><br>
                             <hr style="width:50%;text-align:left;margin-left:0;height:2px;border-width:0;color:gray;background-color:white;">
                             <h1 style="margin-top:16%;font-family: 'Kalam', cursive;color:black;">" ELİNİZİ İYİLİK İÇİN UZATIN "</h1>
                         </div>
@@ -154,7 +154,27 @@
                     <div class="col-xl-6 col-md-4">
                         <h3 style="padding-left:20%;">Projelerimiz</h3>
                     </div>
-                    
+                    <div class="col-xl-6 col-md-8">
+                        <div class="explorer_tab">
+                            <nav>
+                                <div class="nav" id="nav-tab" role="tablist">
+                                    <?php
+                                    $projeler = $VT->VeriGetir("projekonulari", "WHERE durum=?", array(1), "ORDER BY ID ASC");
+                                    if ($projeler != false) {
+                                        for ($i = 0; $i < count($projeler); $i++) {
+
+                                    ?>
+                                            <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><?= $projeler[$i]["konu"] ?></a>
+
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </nav>
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tab-content" id="nav-tabContent" style="padding-top:4%;padding-bottom:6%">
@@ -226,7 +246,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="section_title mb-60 text-center">
-                            <p>YILDIZ</p>
+                            <p>NECAT SOSYAL YARDIMLAŞMA EĞİTİM KÜLTÜR VE TURİZM DERNEĞİ</p>
                             <h3>
                                 Günün Sözü
                                 
