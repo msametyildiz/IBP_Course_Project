@@ -1,0 +1,27 @@
+Options -indexes  
+# örneğin bu sitenin localhost/adminpaneli/data sayfasına giriş iznini vermez
+
+RewriteEngine On
+# rewrite modulunu aktif ettim
+
+RewriteBase /IBP_Course_Project/
+# çalıştığım dizinin yolunu kaydettim
+
+RewriteRule ^kurumsal/(.*)$ index.php?sayfa=kurumsal&selflink=$1 [NC]
+RewriteRule ^hizmetler$ index.php?sayfa=hizmetler [NC]
+RewriteRule ^projeler$ index.php?sayfa=projeler [NC]
+RewriteRule ^bagis$ index.php?sayfa=bagis [NC]
+RewriteRule ^blog$ index.php?sayfa=blog [NC]
+RewriteRule ^iletisim$ index.php?sayfa=iletisim [NC]
+RewriteRule ^hizmet-detay/(.*)$ index.php?sayfa=hizmet-detay&selflink=$1 [NC]
+RewriteRule ^proje-detay/(.*)$ index.php?sayfa=proje-detay&selflink=$1 [NC]
+RewriteRule ^blog-detay/(.*)$ index.php?sayfa=blog-detay&selflink=$1 [NC]
+RewriteRule ^bagis-bilgilendirme-formu$ index.php?sayfa=bagis-bilgilendirme-formu [NC]
+RewriteRule ^kvkk$ index.php?sayfa=kvkk [NC]
+
+
+
+
+
+
+
