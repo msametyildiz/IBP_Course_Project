@@ -21,7 +21,7 @@ if (!empty($_GET["tablo"])) {
 
             <div class="col-sm-6">
 
-              <h1 class="m-0">Projeler</h1>
+              <h1 class="m-0">kitaplar</h1>
 
             </div><!-- /.col -->
 
@@ -31,7 +31,7 @@ if (!empty($_GET["tablo"])) {
 
                 <li class="breadcrumb-item"><a href="<?= SITE ?>">Anasayfa</a></li>
 
-                <li class="breadcrumb-item active">Projeler</li>
+                <li class="breadcrumb-item active">kitaplar</li>
 
               </ol>
 
@@ -57,7 +57,7 @@ if (!empty($_GET["tablo"])) {
 
             <div class="col-md-12">
 
-              <a href="<?= SITE ?>proje-ekle" class="btn btn-success" style="float:right; margin-bottom=10px;"><i class="fa fa-plus"></i>YENİ EKLE</a>
+              <a href="<?= SITE ?>kitap-ekle" class="btn btn-success" style="float:right; margin-bottom=10px;"><i class="fa fa-plus"></i>YENİ EKLE</a>
 
             </div>
             <div class="col-md-12"><br></div>
@@ -95,7 +95,7 @@ if (!empty($_GET["tablo"])) {
 
                   <?php
 
-                  $veriler = $VT->VeriGetir("projekonulari", "", "", "ORDER BY ID ASC");
+                  $veriler = $VT->VeriGetir("kitapkonulari", "", "", "ORDER BY ID ASC");
 
                   if ($veriler != false) {
 
@@ -133,7 +133,7 @@ if (!empty($_GET["tablo"])) {
 
                         <td style="padding-left:3%">
 
-                          <a href="<?= SITE ?>proje-sil/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-danger btn-sm">Kaldır</a>
+                          <a href="<?= SITE ?>kitap-sil/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-danger btn-sm">Kaldır</a>
 
                         </td>
 

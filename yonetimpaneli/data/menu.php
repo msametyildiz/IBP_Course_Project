@@ -96,17 +96,17 @@
            <a href="#" class="nav-link">
              <i class="nav-icon fas fa-th"></i>
              <p>
-               Projeler
+               kitaplar
                <i class="right fas fa-angle-left"></i>
              </p>
            </a>
            <ul class="nav nav-treeview">
              <?php
-              $moduller = $VT->VeriGetir("moduller", "WHERE tablo=?", array("projekonulari"), "ORDER BY ID ASC");
+              $moduller = $VT->VeriGetir("moduller", "WHERE tablo=?", array("kitapkonulari"), "ORDER BY ID ASC");
               if ($moduller != false) {
               ?>
                <li class="nav-item">
-                 <a href="<?= SITE ?>proje-liste/<?= $moduller[0]["tablo"] ?>" class="nav-link">
+                 <a href="<?= SITE ?>kitap-liste/<?= $moduller[0]["tablo"] ?>" class="nav-link">
                    <i class="far fa-circle nav-icon"></i>
                    <p><?= $moduller[0]["baslik"] ?></p>
                  </a>

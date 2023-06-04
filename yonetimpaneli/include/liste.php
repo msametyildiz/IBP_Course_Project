@@ -84,7 +84,7 @@ if (!empty($_GET["tablo"])) {
 
                     <th style="width:50px;">Sıra</th>
                     <?php
-                    if ($kontrol[0]['tablo'] == "projeler") {
+                    if ($kontrol[0]['tablo'] == "kitaplar") {
                       echo "<th>Proje Konusu</th>";
                     }
                     ?>
@@ -131,7 +131,7 @@ if (!empty($_GET["tablo"])) {
 
                         <td><?= $sira ?></td>
                         <?php
-                        if ($kontrol[0]['tablo'] == "projeler") {
+                        if ($kontrol[0]['tablo'] == "kitaplar") {
                           echo "<td>" . stripslashes($veriler[$i]["kategori"]) . "</td>";
                         }
                         ?>

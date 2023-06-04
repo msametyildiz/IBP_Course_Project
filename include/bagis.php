@@ -23,7 +23,7 @@
                                 <div class="main-subtitle-top mb-4" style="opacity: 0.7;">Necat Derneği’ne yurtdışından bağış yapmak isteyenlerin dikkatine!</div>
                                 <div class="main-subtitle-bottom mt-3" style="opacity: 0.7;">Dünyanın her yerindeki bankalardan Necat derneği resmî banka hesaplarına, döviz havalesi gönderilebilmektedir.</div>
                                 <div class="main-subtitle-bottom mt-3" style="opacity: 0.7;">Yurtdışından yapılacak ödemeler için: Swift Kodu “<strong><?= $kontrol[0]["swiftkodu"] ?></strong>”</div>
-                                <div class="mt-3" style="opacity: 0.7;">Necat yardımlarını, projelerini sürdürülebilir kılmak için Necat Derneği’ne ait hesap numaralarımız:</div>
+                                <div class="mt-3" style="opacity: 0.7;">Necat yardımlarını, kitaplarini sürdürülebilir kılmak için Necat Derneği’ne ait hesap numaralarımız:</div>
                             </div>
                         </div>
                         <div class="clear"></div>

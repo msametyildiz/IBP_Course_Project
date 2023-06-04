@@ -12,11 +12,11 @@
                             </div>
                             <div class="logo">
                                     <a href="<?=SITE?>" style="color:black;font-size:30px;background-image: url('<?=SITE?>img/about/counter.png')">
-                                        PAYLASTIKCA
+                                        MSY KİTAP
                                         <!--<img src="<?=SITE?>img/logo.png" alt="">-->
                                     </a>
                                 </div>
-                            <p><br> ELİNİZİ İYİLİK İÇİN UZATIN</p>
+                            <p><br> OKUDUKÇA DÜŞLE, DÜŞLEDİKÇE OKU</p>
                             <div class="socail_links">
                                 <ul>
                                     <li>
@@ -59,12 +59,12 @@
                     <div class="col-xl-4 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                            NECAT SOSYAL YARDIMLAŞMA EĞİTİM KÜLTÜR VE TURİZM DERNEĞİ</h3>
+                            MSY KİTAP</h3>
                             <ul style="display:inline-block;">
                                 <li><a href="<?= SITE ?>kurumsal/hakkimizda">Hakkımızda</a></li>
                                 <li><a href="<?= SITE ?>kurumsal/misyonumuz">Misyonumuz</a></li>
                                 <li ><a href="<?= SITE ?>hizmetler">Hizmetler</a></li>
-                                <li ><a href="<?= SITE ?>projeler">Projeler</a></li>
+                                <li ><a href="<?= SITE ?>kitaplar">Kitaplar</a></li>
                             </ul>
                             <ul style="display:inline-block;padding-left:15%;" >
                                 

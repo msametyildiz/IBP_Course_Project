@@ -11,13 +11,13 @@
         if ($veri != false) {
             $sil=$VT->SorguCalistir("DELETE FROM ".$tablo,"WHERE ID=?",array($ID),1);
                 ?>
-                <meta http-equiv="refresh" content="0;url=<?= SITE ?>proje-liste/<?= $kontrol[0]["tablo"] ?>">
+                <meta http-equiv="refresh" content="0;url=<?= SITE ?>kitap-liste/<?= $kontrol[0]["tablo"] ?>">
                 <?php
 
             }
         else{
             ?>
-                <meta http-equiv="refresh" content="0;url=<?= SITE ?>proje-liste/<?= $kontrol[0]["tablo"] ?>">
+                <meta http-equiv="refresh" content="0;url=<?= SITE ?>kitap-liste/<?= $kontrol[0]["tablo"] ?>">
             <?php
         }
     }

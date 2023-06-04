@@ -167,9 +167,9 @@
                                 y&uuml;k&uuml;ml&uuml;l&uuml;klerin yerine getirilebilmesi, bağış sebebiyle
                                 teşekk&uuml;r edebilme amacı,</li>
                             <li>Organizasyon yapabilmek,</li>
-                            <li>Projeler kapsamında ilgili ihtiya&ccedil; sahipleri ile iletişime
+                            <li>kitaplar kapsamında ilgili ihtiya&ccedil; sahipleri ile iletişime
                                 ge&ccedil;ilmesi,&nbsp;</li>
-                            <li>Yapılacak yeni projeler ve iş birlikleri amacıyla bilgilendirme yapılması,&nbsp;</li>
+                            <li>Yapılacak yeni kitaplar ve iş birlikleri amacıyla bilgilendirme yapılması,&nbsp;</li>
                             <li>Tedarik&ccedil;iler ve diğer &uuml;&ccedil;&uuml;nc&uuml; kişiler ile olan ilişkilerin
                                 y&uuml;r&uuml;t&uuml;lmesi,</li>
                             <li>Risk y&ouml;netimi ve kalite geliştirme &ccedil;alışmalarının planlanması ve yerine

@@ -3,7 +3,7 @@ class VT{
 	var $sunucu="localhost";
 	var $user="root";
 	var $password="";
-	var $dbname="yonetimpaneli";
+	var $dbname="ibp_course_project_yonetimpaneli";
 	var $baglanti;
 
 	//veri tabananına bağlantı işlemi burada oluyor

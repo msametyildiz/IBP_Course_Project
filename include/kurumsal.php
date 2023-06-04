@@ -65,19 +65,19 @@ if (!empty($_GET["selflink"])) {
                             <div class="col-xl-4 col-md-4">
                                 <div class="single_counter text-center">
                                     <h3> <span class="counter">1503</span> </h3>
-                                    <p>Bursiyerlerimiz</p>
+                                    <p>Kitap Sayısı</p>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-4">
                                 <div class="single_counter text-center">
-                                    <h3> <span class="counter">328</span></h3>
-                                    <p>Ailelerimiz</p>
+                                    <h3> <span class="counter">58</span></h3>
+                                    <p>Yazar Sayısı</p>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-4 ">
                                 <div class="single_counter text-center">
-                                    <h3> <span class="counter">2263</span></h3>
-                                    <p>Happy Clients</p>
+                                    <h3> <span class="counter">26</span></h3>
+                                    <p>Yayınevi Sayısı</p>
                                 </div>
                             </div>
                         </div>

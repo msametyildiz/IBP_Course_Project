@@ -41,6 +41,8 @@ if(!empty($_SESSION["ID"]) && !empty($_SESSION["adsoyad"]) && !empty($_SESSION["
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page" style="background-image:url('dist/img/panel-background-pic.jpg');background-size: cover;">
+<div style="margin-bottom:5%;margin-left:80%;"><a href="../" class="btn btn-info" style="float:right; margin-bottom:10px; margin-left:10px; text-align: right;"><i class="fa-solid fa-backward"></i></i> GERİ</a></div>
+
 <div class="login-box" >
   <div class="login-logo">
     <a href="<?=SITE?>"><b>Admin</b>Paneli</a>

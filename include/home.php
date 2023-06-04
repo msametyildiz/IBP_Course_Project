@@ -24,9 +24,9 @@
 
                         </div>
                         <div id="icerik" style="position: absolute;	top: 50%;left: 40%;transform:translate(-50%,-50%);color: white;	font-size: 20px;">
-                            <h2 style="font-family: 'Alkalami', serif;color:black;">NECAT SOSYAL YARDIMLAŞMA EĞİTİM KÜLTÜR VE TURİZM DERNEĞİ</h2><br>
+                            <h2 style="font-family: 'Alkalami', serif;color:black;">MSY KİTAP </h2><br>
                             <hr style="width:50%;text-align:left;margin-left:0;height:2px;border-width:0;color:gray;background-color:white;">
-                            <h1 style="margin-top:16%;font-family: 'Kalam', cursive;color:black;">" ELİNİZİ İYİLİK İÇİN UZATIN "</h1>
+                            <h1 style="margin-top:16%;font-family: 'Kalam', cursive;color:black;">" OKUDUKÇA DÜŞLE, DÜŞLEDİKÇE OKU "</h1>
                         </div>
                     </section>
 
@@ -152,19 +152,19 @@
             <div class="explorer_wrap">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-md-4">
-                        <h3 style="padding-left:20%;">Projelerimiz</h3>
+                        <h3 style="padding-left:20%;">Kitaplar</h3>
                     </div>
-                    <div class="col-xl-6 col-md-8">
+                            <div class="col-xl-6 col-md-8">
                         <div class="explorer_tab">
                             <nav>
                                 <div class="nav" id="nav-tab" role="tablist">
                                     <?php
-                                    $projeler = $VT->VeriGetir("projekonulari", "WHERE durum=?", array(1), "ORDER BY ID ASC");
-                                    if ($projeler != false) {
-                                        for ($i = 0; $i < count($projeler); $i++) {
+                                    $kitaplar = $VT->VeriGetir("kitapkonulari", "WHERE durum=?", array(1), "ORDER BY ID ASC");
+                                    if ($kitaplar != false) {
+                                        for ($i = 0; $i < count($kitaplar); $i++) {
 
                                     ?>
-                                            <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><?= $projeler[$i]["konu"] ?></a>
+                                            <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><?= $kitaplar[$i]["konu"] ?></a>
 
                                     <?php
                                         }
@@ -183,11 +183,11 @@
                         <?php
                         $counter = 0;
                         //Burada yapılan şey ıd numarasında göre en son kaydedilen 3 hizmeti listeleme VeriGetir("hizmetler", "WHERE durum=?", array(1), "ORDER BY ID DESC",5) yazsaydık 5 tane listeleyecekti DESC ise sondan başla demek
-                        $projeler = $VT->VeriGetir("projeler", "WHERE durum=?", array(1), "ORDER BY ID DESC", 6);
-                        if ($projeler != false) {
-                            for ($i = 0; $i < count($projeler); $i++) {
-                                if (!empty($projeler[$i]["resim"])) {
-                                    $resim = $projeler[$i]["resim"];
+                        $kitaplar = $VT->VeriGetir("kitaplar", "WHERE durum=?", array(1), "ORDER BY ID DESC", 6);
+                        if ($kitaplar != false) {
+                            for ($i = 0; $i < count($kitaplar); $i++) {
+                                if (!empty($kitaplar[$i]["resim"])) {
+                                    $resim = $kitaplar[$i]["resim"];
                                 } else {
                                     $resim = 'varsayilan.png';
                                 }
@@ -195,7 +195,7 @@
                                 <div class="col-xl-4 col-lg-4 col-md-6" onclick="location.href='<?= SITE ?>hizmet-detay/<?= $hizmetler[$i]['selflink'] ?>';">
                                     <div class="single_explorer">
                                         <div class="thumb">
-                                            <img src="<?= SITE ?>images/projeler/<?= $resim ?>" alt="" style="max-height:200px; max-width:350px">
+                                            <img src="<?= SITE ?>images/kitaplar/<?= $resim ?>" alt="" style="max-height:200px; max-width:350px">
                                         </div>
                                         <div class="explorer_bottom d-flex">
                                             <div class="icon">
@@ -203,8 +203,8 @@
                                             </div>
                                             <div class="explorer_info">
                                                 <h3>
-                                                    <a href="<?= stripslashes($projeler[$i]["baslik"]) ?>">
-                                                        <h4><a href="<?= SITE ?>proje-detay/<?= $projeler[$i]["selflink"] ?>"><?= stripslashes($projeler[$i]["baslik"]) ?></a></h4>
+                                                    <a href="<?= stripslashes($kitaplar[$i]["baslik"]) ?>">
+                                                        <h4><a href="<?= SITE ?>kitap-detay/<?= $kitaplar[$i]["selflink"] ?>"><?= stripslashes($kitaplar[$i]["baslik"]) ?></a></h4>
                                                     </a>
                                                 </h3>
                                             </div>
@@ -246,11 +246,8 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="section_title mb-60 text-center">
-                            <p>NECAT SOSYAL YARDIMLAŞMA EĞİTİM KÜLTÜR VE TURİZM DERNEĞİ</p>
-                            <h3>
-                                Günün Sözü
-                                
-                            </h3>
+                            <p>MSY KİTAP</p>
+                            <h3>Kitaptan Bir Söz</h3>
                         </div>
                     </div>
                 </div>
@@ -264,7 +261,7 @@
             $userblog=$VT->VeriGetir("userblog","WHERE durum=?",array(1),"ORDER BY ID ASC");
             if($userblog!=false){
             for($i=0;$i<count($userblog);$i++){
-                 if(!empty($userblog[$i]["resim"])){$resim=$projeler[$i]["resim"];}else{$resim='varsayilan.png';}
+                 if(!empty($userblog[$i]["resim"])){$resim=$kitaplar[$i]["resim"];}else{$resim='varsayilan.png';}
                 ?>
                             <div class="single_carousel">
                                 <div class="single_testmonial text-center">

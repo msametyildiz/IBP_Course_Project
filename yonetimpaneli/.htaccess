@@ -4,7 +4,7 @@ Options -indexes
 RewriteEngine On
 # rewrite modulunu aktif ettim
 
-RewriteBase /kurumsalsite/yonetimpaneli
+RewriteBase /IBP_Course_Project/yonetimpaneli
 # çalıştığım dizinin yolunu kaydettim
 
 RewriteRule ^liste/(.*)$ index.php?sayfa=liste&tablo=$1 [NC]
@@ -12,16 +12,19 @@ RewriteRule ^modul-ekle$ index.php?sayfa=modul-ekle [NC]
 RewriteRule ^modul-sil$ index.php?sayfa=modul-sil [NC]
 RewriteRule ^modul-sil-func/(.*)/(.*)$ index.php?sayfa=modul-sil-func&tablo=$1&ID=$2  [NC]
 
-RewriteRule ^proje-ekle$ index.php?sayfa=proje-ekle [NC]
-RewriteRule ^proje-liste/(.*)$ index.php?sayfa=proje-liste&tablo=$1 [NC]
-RewriteRule ^proje-sil/(.*)/(.*)$ index.php?sayfa=proje-sil&tablo=$1&ID=$2  [NC]
+RewriteRule ^kitap-ekle$ index.php?sayfa=kitap-ekle [NC]
+RewriteRule ^kitap-liste/(.*)$ index.php?sayfa=kitap-liste&tablo=$1 [NC]
+RewriteRule ^kitap-sil/(.*)/(.*)$ index.php?sayfa=kitap-sil&tablo=$1&ID=$2  [NC]
 
 RewriteRule ^ekip-uyeleri$ index.php?sayfa=ekip-uyeleri [NC]
 RewriteRule ^ekip-uyeleri-ekle$ index.php?sayfa=ekip-uyeleri-ekle [NC]
 RewriteRule ^ekip-duzenle/(.*)/(.*)$ index.php?sayfa=ekip-duzenle&tablo=$1&ID=$2  [NC]
 RewriteRule ^ekip-uyeleri-sil/(.*)/(.*)$ index.php?sayfa=ekip-uyeleri-sil&tablo=$1&ID=$2  [NC]
 
-RewriteRule ^proje-sil/(.*)/(.*)$ index.php?sayfa=proje-sil&tablo=$1&ID=$2  [NC]
+RewriteRule ^kitap-sil/(.*)/(.*)$ index.php?sayfa=kitap-sil&tablo=$1&ID=$2  [NC]
+
+
+
 RewriteRule ^userblog$ index.php?sayfa=userblog [NC]
 RewriteRule ^userblog-list/(.*)$ index.php?sayfa=userblog-list&tablo=$1 [NC]
 RewriteRule ^userblog-delete/(.*)/(.*)$ index.php?sayfa=userblog-delete&tablo=$1&ID=$2  [NC]

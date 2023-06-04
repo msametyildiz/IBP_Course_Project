@@ -85,8 +85,8 @@ if (!empty($_GET["tablo"])) {
                       <select class="form-control select2" style="width: 100%;" name="kategori">
                       
                         <?php
-                        if ($kontrol[0]['tablo'] == "projeler") {
-                          $tabloverisi = $VT->VeriGetir("projekonulari", "WHERE durum=?", array(1), "ORDER BY ID ASC");
+                        if ($kontrol[0]['tablo'] == "kitaplar") {
+                          $tabloverisi = $VT->VeriGetir("kitapkonulari", "WHERE durum=?", array(1), "ORDER BY ID ASC");
                           
                           if ($tabloverisi != false) { //eğer bir değer var ise
                             for ($i = 0; $i < count($tabloverisi); $i++) {
