@@ -33,32 +33,33 @@
                                         </li>
                                         <li><a href="#">KİTAP <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                            <?php
-$kitaplar = $VT->VeriGetir("kitapkonulari", "WHERE durum=?", array(1), "ORDER BY ID ASC");
-$kitap = $VT->VeriGetir("kitaplar", "WHERE durum=?", array(1), "ORDER BY ID ASC");
-$printed = array();
+                                                <?php
+                                                $kitaplar = $VT->VeriGetir("kitapkonulari", "WHERE durum=?", array(1), "ORDER BY ID ASC");
+                                                $kitap = $VT->VeriGetir("kitaplar", "WHERE durum=?", array(1), "ORDER BY ID ASC");
+                                                $printed = array();
 
-if ($kitaplar != false && $kitap != false) {
-    for ($i = 0; $i < count($kitaplar); $i++) {
-        $isPrinted = false;
-        
-        for ($j = 0; $j < count($kitap); $j++) {
-            if ($kitaplar[$i]["konu"] == $kitap[$j]["kategori"]) {
-                if (!$isPrinted) {
-                    echo '<li><a href="' . SITE . 'kitaplar/' . $kitaplar[$i]["selflink"] . '">' . stripslashes($kitaplar[$i]["konu"]) . '</a></li>';
-                    $isPrinted = true;
-                }
-            }
-        }
-    }
-}
-?>
+                                                if ($kitaplar != false && $kitap != false) {
+                                                    for ($i = 0; $i < count($kitaplar); $i++) {
+                                                        $isPrinted = false;
+
+                                                        for ($j = 0; $j < count($kitap); $j++) {
+                                                            if ($kitaplar[$i]["konu"] == $kitap[$j]["kategori"]) {
+                                                                if (!$isPrinted) {
+                                                                    echo '<li><a href="' . SITE . 'kitaplar/' . $kitaplar[$i]["selflink"] . '">' . stripslashes($kitaplar[$i]["konu"]) . '</a></li>';
+                                                                    $isPrinted = true;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                ?>
 
                                             </ul>
                                         </li>
-                                        <li><a href="<?= SITE ?>hizmetler">ÇOK SATAN KİTAPLAR</a></li>
-                                        <li><a href="<?= SITE ?>kitaplar">YAZARLAR</a></li>
+                                        
+                                        <li><a href="<?= SITE ?>yazarlar">YAZARLAR</a></li>
                                         <li><a href="<?= SITE ?>blog">YAYINEVİ LİSTESİ</a></li>
+                                        <li><a href="<?= SITE ?>hizmetler">SSS</a></li>
                                         <li>
                                         <li style="float:right;padding: 8px 8px;background-color:red;"><a href="<?= SITE ?>yonetimpaneli/giris-yap" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='black'"> GİRİŞ YAP <i aria-hidden="true" style="font-size:15px;"></i></a></li>
 

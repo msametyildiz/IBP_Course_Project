@@ -34,7 +34,7 @@ if (!empty($_GET["tablo"]) && !empty($_GET["ID"])) {
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
-                <a href="<?= SITE ?>liste/<?= $kontrol[0]["tablo"] ?>" class="btn btn-info" style="float:right; margin-bottom=10px; margin-left:10px;"><i class="fa fa-bars"></i> LİSTE</a>
+                <a href="<?= SITE ?>liste/<?= $kontrol[0]["tablo"] ?>" class="btn btn-info" style="float:right; margin-bottom:10px; margin-left:10px;"><i class="fa fa-bars"></i> LİSTE</a>
               </div>
             </div>
             <!----------------------------------------------------------------------------------------------------------------------------------->
@@ -50,7 +50,7 @@ if (!empty($_GET["tablo"]) && !empty($_GET["ID"])) {
                 $metin = $VT->filter($_POST["metin"], true); //true yazılmasının sebebi editor kullnıldığı için html komutlarını temizlemesini istemiyorum
 
                 foreach ($_FILES["resim"]["name"] as $key => $value) {
-                  if (!empty($_FILES["resim"]["name"])) {
+                  if (!empty($_FILES["resim"]["name"][$key])) {
                     $yukle = $VT->upload("resim", "../images/" . $kontrol[0]["tablo"] . "/");
                     if ($yukle != false) {
                       $ekle = $VT->SorguCalistir("UPDATE " . $kontrol[0]["tablo"], "SET baslik=?, selflink=?, kategori=?, metin=?, resim=?, anahtar=?, description=?, durum=?,sirano=?,tarih=? WHERE ID=?", array($baslik, $selflink, $kategori, $metin, $yukle, $anahtar, $description, 1, $sirano, date("Y-m-d"), $veri[0]["ID"]));

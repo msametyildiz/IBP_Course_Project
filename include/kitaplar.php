@@ -23,7 +23,7 @@ if (!empty($_GET["selflink"])) {
     <div class="container" style="margin-top:7%;padding-bottom:7%">
    <div class="row align-items-center">
        <?php
-       $kitaplar=$VT->VeriGetir("kitaplar","WHERE durum=?",array(1),"ORDER BY sirano ASC");
+       $kitaplar=$VT->VeriGetir("kitaplar","WHERE durum=? AND kategoriselflink=? ",array(1,$selflink),"ORDER BY sirano ASC");
        if($kitaplar!=false){
         for($i=0;$i<count($kitaplar);$i++){
             if(!empty($kitaplar[$i]["resim"])){$resim=$kitaplar[$i]["resim"];}else{$resim='varsayilan.png';}
@@ -40,7 +40,7 @@ if (!empty($_GET["selflink"])) {
                         </div>
                         <div class="explorer_info">
                             <h3><a href="<?=SITE?>kitap-detay/<?=$kitaplar[$i]["selflink"]?>"><?=stripslashes($kitaplar [$i]["baslik"])?></a></h3>
-                            <p><?=mb_substr(strip_tags(stripslashes($kitaplar[$i]["metin"])),0,120,"UTF-8")?>...</p>
+                            <p><?=mb_substr(strip_tags(stripslashes($kitaplar[$i]["yazar"])),0,120,"UTF-8")?></p>
                             
                         </div>
                     </div>
