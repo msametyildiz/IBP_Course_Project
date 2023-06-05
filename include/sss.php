@@ -5,7 +5,7 @@
            <div class="row">
                <div class="col-xl-12">
                    <div class="bradcam_text text-center">
-                       <h3>Hizmetlerimiz</h3>
+                       <h3>SIK SORULAN SORULAR</h3>
                    </div>
                </div>
            </div>
@@ -26,9 +26,7 @@
             
             <div class="col-xl-4 col-lg-4 col-md-6" style="max-width:380px; max-height:392px;" onclick="location.href='<?=SITE?>hizmet-detay/<?=$hizmetler[$i]['selflink']?>';">
                 <div class="single_explorer" >
-                    <div class="thumb">
-                        <img src="<?=SITE?>images/hizmetler/<?=$resim?>" alt="<?=stripslashes($hizmetler[$i]["baslik"])?>" style="max-height:200px; max-width:350px">
-                    </div>
+                    
                     <div class="explorer_bottom d-flex">
                         <div class="icon">
                             <i class="flaticon-beach"></i>

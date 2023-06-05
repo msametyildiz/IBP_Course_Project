@@ -57,9 +57,8 @@
                                             </ul>
                                         </li>
                                         
-                                        <li><a href="<?= SITE ?>yazarlar">YAZARLAR</a></li>
-                                        <li><a href="<?= SITE ?>blog">YAYINEVİ LİSTESİ</a></li>
-                                        <li><a href="<?= SITE ?>hizmetler">SSS</a></li>
+                                        <li><a href="<?= SITE ?>yayinevi">YAYINEVİ LİSTESİ</a></li>
+                                        <li><a href="<?= SITE ?>sss">SSS</a></li>
                                         <li>
                                         <li style="float:right;padding: 8px 8px;background-color:red;"><a href="<?= SITE ?>yonetimpaneli/giris-yap" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='black'"> GİRİŞ YAP <i aria-hidden="true" style="font-size:15px;"></i></a></li>
 

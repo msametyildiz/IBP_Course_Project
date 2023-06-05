@@ -68,7 +68,7 @@
                             </ul>
                             <ul style="display:inline-block;padding-left:15%;" >
                                 
-                                <li ><a href="<?= SITE ?>blog">Bloglar</a></li>
+                                <li ><a href="<?= SITE ?>yayinevi">Yayınevi</a></li>
                                 <li ><a href="<?= SITE ?>iletisim">İletişim</a></li>
                                 <li><a href="#">Destekçilerimiz</a></li>
                                 <li><a href="#">Destekçilerimiz</a></li>

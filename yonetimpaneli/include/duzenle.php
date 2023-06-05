@@ -40,26 +40,25 @@ if (!empty($_GET["tablo"]) && !empty($_GET["ID"])) {
             <!----------------------------------------------------------------------------------------------------------------------------------->
             <?php
             if ($_POST) {
-              if (!empty($_POST["kategori"]) && !empty($_POST["baslik"]) && !empty($_POST["anahtar"]) && !empty($_POST["description"]) && !empty($_POST["sirano"])) {
+              if (!empty($_POST["kategori"]) && !empty($_POST["baslik"]) && !empty($_POST["anahtar"]) && !empty($_POST["description"]) ) {
                 $kategori = $VT->filter($_POST["kategori"]);
                 $baslik = $VT->filter($_POST["baslik"]);
                 $anahtar = $VT->filter($_POST["anahtar"]);
                 $selflink = $VT->selflink($baslik);
                 $description = $VT->filter($_POST["description"]);
-                $sirano = $VT->filter($_POST["sirano"]);
                 $metin = $VT->filter($_POST["metin"], true); //true yazılmasının sebebi editor kullnıldığı için html komutlarını temizlemesini istemiyorum
 
                 foreach ($_FILES["resim"]["name"] as $key => $value) {
                   if (!empty($_FILES["resim"]["name"][$key])) {
                     $yukle = $VT->upload("resim", "../images/" . $kontrol[0]["tablo"] . "/");
                     if ($yukle != false) {
-                      $ekle = $VT->SorguCalistir("UPDATE " . $kontrol[0]["tablo"], "SET baslik=?, selflink=?, kategori=?, metin=?, resim=?, anahtar=?, description=?, durum=?,sirano=?,tarih=? WHERE ID=?", array($baslik, $selflink, $kategori, $metin, $yukle, $anahtar, $description, 1, $sirano, date("Y-m-d"), $veri[0]["ID"]));
+                      $ekle = $VT->SorguCalistir("UPDATE " . $kontrol[0]["tablo"], "SET baslik=?, selflink=?, kategori=?, metin=?, resim=?, anahtar=?, description=?, durum=?,tarih=? WHERE ID=?", array($baslik, $selflink, $kategori, $metin, $yukle, $anahtar, $description, 1, $sirano, date("Y-m-d"), $veri[0]["ID"]));
                     } else { ?>
                       <div class="alert alert-info">! RESİM YÜKLEME İŞLEMİNİZ BAŞARISIZ !</div>
                 <?php
                     }
                   } else {
-                    $ekle = $VT->SorguCalistir("UPDATE " . $kontrol[0]["tablo"], "SET baslik=?, selflink=?, kategori=?, metin=?, anahtar=?, description=?, durum=?, sirano=?, tarih=? WHERE ID=?", array($baslik, $selflink, $kategori, $metin, $anahtar, $description, 1, $sirano, date("Y-m-d"), $veri[0]["ID"]));
+                    $ekle = $VT->SorguCalistir("UPDATE " . $kontrol[0]["tablo"], "SET baslik=?, selflink=?, kategori=?, metin=?, anahtar=?, description=?, durum=?,  tarih=? WHERE ID=?", array($baslik, $selflink, $kategori, $metin, $anahtar, $description, 1, $sirano, date("Y-m-d"), $veri[0]["ID"]));
                   }
                 }
 
