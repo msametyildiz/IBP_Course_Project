@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Kullanıcı Yazıları Ekle</h1>
+                    <h1 class="m-0">Kitaptan Bir Söz Ekle</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="<?= SITE ?>">Anasayfa</a></li>
-                        <li class="breadcrumb-item active">Kullanıcı Yazıları Ekle</li>
+                        <li class="breadcrumb-item active">Kitaptan Bir Söz Ekle</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -26,10 +26,9 @@
             <div class="col-md-12"><br></div>
             <?php
             if ($_POST) {
-                if (!empty($_POST["adsoyad"])&&!empty($_POST["aciklama"])&&!empty($_POST["unvan"])) {
+                if (!empty($_POST["adsoyad"])&&!empty($_POST["aciklama"])) {
                     $adsoyad = $VT->filter($_POST["adsoyad"]);
                     $aciklama = $VT->filter($_POST["aciklama"]);
-                    $unvan = $VT->filter($_POST["unvan"]);
                     $tablo = str_replace("-", "", $VT->selflink($aciklama));
                     
                     $kontrol = $VT->VeriGetir("userblog", "WHERE tablo=?", array($tablo), "ORDER BY ID ASC", 1); // TODO
@@ -43,7 +42,7 @@
                         if (!empty($_FILES["resim"]["name"])) {
                             $yukle = $VT->upload("resim", "../images/" .  "userblog" . "/");
                             if ($yukle != false) {
-                            $ekle= $VT->SorguCalistir("INSERT INTO userblog", "SET adsoyad=?,tablo=?, unvan=? ,resim=?, aciklama=?, durum=?, tarih=?", array($adsoyad, $tablo,$unvan,$yukle, $aciklama,1,date("y-m-d")));
+                            $ekle= $VT->SorguCalistir("INSERT INTO userblog", "SET adsoyad=?,tablo=? ,resim=?, aciklama=?, durum=?, tarih=?", array($adsoyad, $tablo,$yukle, $aciklama,1,date("y-m-d")));
                             ?>
                               <div class="alert alert-info">! RESİM YÜKLEME İŞLEMİNİZ BAŞARILI !</div>
                             <?php
@@ -53,7 +52,7 @@
                             <?php
                             }
                           } else {
-                            $ekle= $VT->SorguCalistir("INSERT INTO userblog", "SET adsoyad=?,tablo=?, unvan=?, aciklama=?, durum=?, tarih=?", array($adsoyad, $tablo,$unvan, $aciklama,1,date("y-m-d")));
+                            $ekle= $VT->SorguCalistir("INSERT INTO userblog", "SET adsoyad=?,tablo=?, aciklama=?, durum=?, tarih=?", array($adsoyad, $tablo, $aciklama,1,date("y-m-d")));
                             
                         }
                           if ($ekle != false) {
@@ -84,17 +83,12 @@
                                             <!-- user-namelastname -->
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Ad Soyad</label>
-                                                    <input type="text" class="form-control" placeholder="Ad Soyad ..." name="adsoyad">
+                                                    <label>Kitap Adı</label>
+                                                    <input type="text" class="form-control" placeholder="Kitap Adı ..." name="adsoyad">
                                                 </div>
                                             </div>
                                             <!-- user-namelastname -->
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Unvan</label>
-                                                    <input type="text" class="form-control" placeholder="Unvan ..." name="unvan">
-                                                </div>
-                                            </div>
+                                        
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Açıklama</label>
@@ -108,13 +102,7 @@
                                     <textarea id="summernote" name="aciklama" placeholder="Metin Alanı..."></textarea>
                                 </div>
                             </div>-->
-                                            <!--pictures  -->
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Resimler</label>
-                                                    <input type="file" class="form-control" placeholder="Resim Seçiniz ..." name="resim">
-                                                </div>
-                                            </div>
+                                            
                                             <!--button  -->
                                             <div class="col-md-10">
                                                 <div class="form-group">

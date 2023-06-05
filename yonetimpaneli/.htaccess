@@ -15,6 +15,8 @@ RewriteRule ^modul-sil-func/(.*)/(.*)$ index.php?sayfa=modul-sil-func&tablo=$1&I
 RewriteRule ^kitap-ekle$ index.php?sayfa=kitap-ekle [NC]
 RewriteRule ^kitap-liste/(.*)$ index.php?sayfa=kitap-liste&tablo=$1 [NC]
 RewriteRule ^kitap-sil/(.*)/(.*)$ index.php?sayfa=kitap-sil&tablo=$1&ID=$2  [NC]
+RewriteRule ^kitaplar-liste/(.*)$ index.php?sayfa=kitaplar-liste&tablo=$1 [NC]
+RewriteRule ^kitap-duzenle/(.*)/(.*)$ index.php?sayfa=kitap-duzenle&tablo=$1&ID=$2  [NC]
 
 RewriteRule ^ekip-uyeleri$ index.php?sayfa=ekip-uyeleri [NC]
 RewriteRule ^ekip-uyeleri-ekle$ index.php?sayfa=ekip-uyeleri-ekle [NC]
@@ -38,10 +40,14 @@ RewriteRule ^sil/(.*)/(.*)$ index.php?sayfa=sil&tablo=$1&ID=$2  [NC]
 RewriteRule ^seo-ayarlari$ index.php?sayfa=seo-ayarlari [NC]
 RewriteRule ^iletisim-ayarlari$ index.php?sayfa=iletisim-ayarlari [NC]
 
+
 RewriteRule ^kullanici-ayarlari$ index.php?sayfa=kullanici-ayarlari [NC]
 RewriteRule ^kullanici-ekle$ index.php?sayfa=kullanici-ekle [NC]
 RewriteRule ^kullanici-duzenle/(.*)$ index.php?sayfa=kullanici-duzenle&ID=$1  [NC]
-RewriteRule ^kullanici-liste$ index.php?sayfa=kullanici-liste [NC]
+RewriteRule ^kullanici-liste/(.*)$ index.php?sayfa=kullanici-liste&tablo=$1 [NC]
+RewriteRule ^kullanici-sil/(.*)/(.*)$ index.php?sayfa=kullanici-sil&tablo=$1&ID=$2  [NC]
+RewriteRule ^iletisim-y$ index.php?sayfa=iletisim-y [NC]
+
 
 RewriteRule ^giris-yap$ login.php [NC]
 RewriteRule ^cikis$ index.php?sayfa=cikis [NC]

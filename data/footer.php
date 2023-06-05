@@ -7,7 +7,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="img/footer_logo.png" alt="">
+                                    <img src="img/footer_logo.png" alt="" style="max-width: 45%; max-height:45%;">
                                 </a>
                             </div>
                             <div class="logo">
@@ -63,12 +63,11 @@
                             <ul style="display:inline-block;">
                                 <li><a href="<?= SITE ?>kurumsal/hakkimizda">Hakkımızda</a></li>
                                 <li><a href="<?= SITE ?>kurumsal/misyonumuz">Misyonumuz</a></li>
-                                <li ><a href="<?= SITE ?>hizmetler">Hizmetler</a></li>
-                                <li ><a href="<?= SITE ?>kitaplar">Kitaplar</a></li>
+                                <li ><a href="<?= SITE ?>kitap">Kitaplar</a></li>,
                             </ul>
                             <ul style="display:inline-block;padding-left:15%;" >
                                 
-                                <li ><a href="<?= SITE ?>yayinevi">Yayınevi</a></li>
+                                <li ><a href="<?= SITE ?>yayinevi">Yayınevleri</a></li>
                                 <li ><a href="<?= SITE ?>iletisim">İletişim</a></li>
                                 <li><a href="#">Destekçilerimiz</a></li>
                                 <li><a href="#">Destekçilerimiz</a></li>

@@ -4,7 +4,7 @@ if (!empty($_GET["tablo"])) {
 
   $tablo = $VT->filter($_GET["tablo"]);
 
-  $kontrol = $VT->VeriGetir("moduller", "WHERE tablo=? AND durum=?", array($tablo, 20), "ORDER BY ID ASC", 1);
+  $kontrol = $VT->VeriGetir("moduller", "WHERE tablo=?", array($tablo), "ORDER BY ID ASC", 1);
 
   if ($kontrol != false) {
 
@@ -26,7 +26,7 @@ if (!empty($_GET["tablo"])) {
 
             <div class="col-sm-6">
 
-              <h1 class="m-0">Kitaptan Bir Söz</h1>
+              <h1 class="m-0"><?= $kontrol[0]["baslik"] ?></h1>
 
             </div><!-- /.col -->
 
@@ -36,7 +36,7 @@ if (!empty($_GET["tablo"])) {
 
                 <li class="breadcrumb-item"><a href="<?= SITE ?>">Anasayfa</a></li>
 
-                <li class="breadcrumb-item active">Kitaptan Bir Söz</li>
+                <li class="breadcrumb-item active"><?= $kontrol[0]["baslik"] ?></li>
 
               </ol>
 
@@ -62,7 +62,7 @@ if (!empty($_GET["tablo"])) {
 
             <div class="col-md-12">
 
-              <a href="<?= SITE ?>userblog" class="btn btn-success" style="float:right; margin-bottom=10px;"><i class="fa fa-plus"></i>YENİ EKLE</a>
+              <a href="<?= SITE ?>ekle/<?= $kontrol[0]["tablo"] ?>" class="btn btn-success" style="float:right; margin-bottom=10px;"><i class="fa fa-plus"></i>YENİ EKLE</a>
 
             </div>
             <div class="col-md-12"><br></div>
@@ -81,10 +81,20 @@ if (!empty($_GET["tablo"])) {
 
                   <tr>
 
+
                     <th style="width:50px;">Sıra</th>
+                    <?php
+                    if ($kontrol[0]['tablo'] == "kitaplar") {
+                      echo "<th>Kitap Adı</th>";
+                    }
+                    ?>
 
-                    <th>Açıklama</th>
 
+
+                    <th>Kitap Türü</th>
+
+                    <th style="width:50px;">Yazar</th>
+                    <th style="width:50px;">Yayınevi</th>
                     <th style="width:50px;">Durum</th>
 
                     <th style="width:80px;">Tarih</th>
@@ -101,7 +111,7 @@ if (!empty($_GET["tablo"])) {
 
                   <?php
 
-                  $veriler = $VT->VeriGetir("userblog", "", "", "ORDER BY ID ASC");
+                  $veriler = $VT->VeriGetir($kontrol[0]["tablo"], "", "", "ORDER BY ID ASC");
 
                   if ($veriler != false) {
 
@@ -122,14 +132,29 @@ if (!empty($_GET["tablo"])) {
                       <tr>
 
                         <td><?= $sira ?></td>
+                        <?php
+                        if ($kontrol[0]['tablo'] == "kitaplar") {
+                          echo "<td>" . stripslashes($veriler[$i]["baslik"]) . "</td>";
+                        }
+                        ?>
+
 
                         <td><?php
 
-                            echo stripslashes($veriler[$i]["adsoyad"]); //stripslashes -->html taglarını temizlemiyor
+                            echo stripslashes($veriler[$i]["kategori"]); //stripslashes -->html taglarını temizlemiyor
 
-                            echo '<br/>' . mb_substr(strip_tags(stripslashes($veriler[$i]["aciklama"])), 0, 130, "UTF-8") . "...";/*strip_tags -> html taglarını temizliyor*/ ?></td>
+                 ?></td>
+<td><?php
 
-                        <td>
+echo stripslashes($veriler[$i]["yazar"]); //stripslashes -->html taglarını temizlemiyor
+
+?></td>
+<td><?php
+
+echo stripslashes($veriler[$i]["yayinevi"]); //stripslashes -->html taglarını temizlemiyor
+
+?></td>
+<td>
 
                           <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
 
@@ -145,9 +170,9 @@ if (!empty($_GET["tablo"])) {
 
                         <td>
 
-                          <a href="<?= SITE ?>userblog-edit/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-warning btn-sm">Düzenle</a>
+                          <a href="<?= SITE ?>duzenle/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-warning btn-sm">Düzenle</a>
 
-                          <a href="<?= SITE ?>userblog-delete/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-danger btn-sm">Kaldır</a>
+                          <a href="<?= SITE ?>sil/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-danger btn-sm">Kaldır</a>
 
                         </td>
 
@@ -168,7 +193,6 @@ if (!empty($_GET["tablo"])) {
 
                 </tbody>
 
-                
 
               </table>
 
@@ -202,7 +226,7 @@ if (!empty($_GET["tablo"])) {
 
   ?>
 
-    <meta http-equiv="refresh" content="5;url=<?= SITE ?>">
+    <meta http-equiv="refresh" content="0;url=<?= SITE ?>">
 
   <?php
 
@@ -213,7 +237,7 @@ if (!empty($_GET["tablo"])) {
 
   ?>
 
-  <meta http-equiv="refresh" content="5;url=<?= SITE ?>">
+  <meta http-equiv="refresh" content="0;url=<?= SITE ?>">
 
 <?php
 

@@ -9,15 +9,13 @@ RewriteBase /IBP_Course_Project/
 
 RewriteRule ^kurumsal/(.*)$ index.php?sayfa=kurumsal&selflink=$1 [NC]
 RewriteRule ^kitaplar/(.*)$ index.php?sayfa=kitaplar&selflink=$1 [NC]
+RewriteRule ^kitap$ index.php?sayfa=kitap [NC]
 RewriteRule ^kitap-detay/(.*)$ index.php?sayfa=kitap-detay&selflink=$1 [NC]
 RewriteRule ^sss$ index.php?sayfa=sss [NC]
-RewriteRule ^bagis$ index.php?sayfa=bagis [NC]
 RewriteRule ^yayinevi$ index.php?sayfa=yayinevi [NC]
 RewriteRule ^iletisim$ index.php?sayfa=iletisim [NC]
 RewriteRule ^hizmet-detay/(.*)$ index.php?sayfa=hizmet-detay&selflink=$1 [NC]
 RewriteRule ^yayinevi-detay/(.*)$ index.php?sayfa=yayinevi-detay&selflink=$1 [NC]
-RewriteRule ^bagis-bilgilendirme-formu$ index.php?sayfa=bagis-bilgilendirme-formu [NC]
-RewriteRule ^kvkk$ index.php?sayfa=kvkk [NC]
 
 
 

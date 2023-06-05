@@ -1,16 +1,9 @@
-<?php
-if (!empty($_GET["selflink"])) {
-    $selflink = $VT->filter($_GET["selflink"]);
-    $veri = $VT->VeriGetir("kitapkonulari", "WHERE selflink=? AND durum=?", array($selflink, 1), "ORDER BY ID ASC", 1);
-    if ($veri != false) {
-?>
-<!-- bradcam_area  -->
 <div class="bradcam_area bradcam_bg_2">
        <div class="container">
            <div class="row">
                <div class="col-xl-12">
                    <div class="bradcam_text text-center">
-                       <h3>Kitaplar</h3>
+                       <h3>kitaplar</h3>
                    </div>
                </div>
            </div>
@@ -22,7 +15,7 @@ if (!empty($_GET["selflink"])) {
     <div class="container" style="margin-top:7%;padding-bottom:7%">
    <div class="row align-items-center">
        <?php
-       $kitaplar=$VT->VeriGetir("kitaplar","WHERE durum=? AND kategoriselflink=? ",array(1,$selflink),"ORDER BY sirano ASC");
+       $kitaplar=$VT->VeriGetir("kitaplar","WHERE durum=? ",array(1),"ORDER BY sirano ASC");
        if($kitaplar!=false){
         for($i=0;$i<count($kitaplar);$i++){
             if(!empty($kitaplar[$i]["resim"])){$resim=$kitaplar[$i]["resim"];}else{$resim='varsayilan.png';}
@@ -54,10 +47,6 @@ if (!empty($_GET["selflink"])) {
     </div>
 </div>
 <!--/ about_mission -->
-<?php
-    }
-}
-?>
 <style>
     .fiyat {
         font-weight: bold;

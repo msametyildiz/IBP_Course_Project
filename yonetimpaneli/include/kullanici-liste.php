@@ -4,7 +4,7 @@ if (!empty($_GET["tablo"])) {
 
   $tablo = $VT->filter($_GET["tablo"]);
 
-  $kontrol = $VT->VeriGetir("moduller", "WHERE tablo=? AND durum=?", array($tablo, 3), "ORDER BY ID ASC", 1);
+  $kontrol = $VT->VeriGetir("moduller", "WHERE tablo=?", array($tablo), "ORDER BY ID ASC", 1);
 
   if ($kontrol != false) {
 
@@ -71,8 +71,7 @@ if (!empty($_GET["tablo"])) {
                                 <th style="width:50px;">Durum</th>
 
 
-                                <!--<th style="width:120px;">İşlem</th>-->
-
+                                <th style="width:120px;">İşlem</th>
                             </tr>
 
                         </thead>
@@ -139,15 +138,17 @@ if (!empty($_GET["tablo"])) {
 
 
 
-                                        <!--<td>
-
+                                        
+<td>
                                             <a href="<?= SITE ?>kullanici-duzenle/<?= $veriler[$i]["ID"] ?>" class="btn btn-warning btn-sm">Düzenle</a>
 
-                                            <a href="<?= SITE ?>kullanici-sil/<?= $kontrol[0]["kullanici"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-danger btn-sm">Kaldır</a>
-
+                                            <a href="<?= SITE ?>kullanici-sil/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-danger btn-sm">Kaldır</a>
+                                            
+                                        
                                         </td>
+                                        
 
-                                    </tr>-->
+                                    </tr>
 
                                 <?php
 

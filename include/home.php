@@ -91,61 +91,7 @@
 
     -->
     <div class="explorer_europe" style="padding-top:5%;">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title mb-60 text-center">
-                        <h3> Neler Yapıyoruz ?</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-content" id="nav-tabContent" style="padding-top:4%;padding-bottom:4%">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class="row">
-                        <?php
-                        $counter = 0;
-                        //Burada yapılan şey ıd numarasında göre en son kaydedilen 3 hizmeti listeleme VeriGetir("hizmetler", "WHERE durum=?", array(1), "ORDER BY ID DESC",5) yazsaydık 5 tane listeleyecekti DESC ise sondan başla demek
-                        $hizmetler = $VT->VeriGetir("hizmetler", "WHERE durum=?", array(1), "ORDER BY ID DESC", 4);
-                        if ($hizmetler != false) {
-                            for ($i = 0; $i < count($hizmetler); $i++) {
-                                if (!empty($hizmetler[$i]["resim"])) {
-                                    $resim = $hizmetler[$i]["resim"];
-                                } else {
-                                    $resim = 'varsayilan.png';
-                                }
-                        ?>
-                                <div class="col-xl-3 col-md-4 col-lg-3" onclick="location.href='<?= SITE ?>hizmet-detay/<?= $hizmetler[$i]['selflink'] ?>';">
-                                    <div class="single_explorer">
-                                        <div class="thumb">
-                                            <img src="<?= SITE ?>images/hizmetler/<?= $resim ?>" alt="" style="max-height:200px; max-width:350px">
-                                        </div>
-                                        <div class="explorer_bottom d-flex">
-                                            <div class="icon" style="background-color:white ;">
-                                                <i class="fa fa-newspaper-o" aria-hidden="true" style="color: black;"></i>
-                                            </div>
-                                            <div class="explorer_info">
-                                                <h3>
-                                                    <a href="<?= stripslashes($hizmetler[$i]["baslik"]) ?>">
-                                                        <h4><a href="<?= SITE ?>hizmet-detay/<?= $hizmetler[$i]["selflink"] ?>"><?= stripslashes($hizmetler[$i]["baslik"]) ?></a></h4>
-                                                        <p><?= mb_substr(strip_tags(stripslashes($hizmetler[$i]["metin"])), 0, 120, "UTF-8") ?>...</p>
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                        <?php
-                            }
-                        }
-                        ?>
-
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
+        
 
 
         <div class="explorer_europe">
@@ -155,7 +101,7 @@
                         <div class="col-xl-6 col-md-4">
                             <h3 style="padding-left:20%;">Kitaplar</h3>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="tab-content" id="nav-tabContent" style="padding-top:4%;padding-bottom:6%">
@@ -205,7 +151,60 @@
                 </div>
             </div>
 
+            <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title mb-60 text-center">
+                        <h3> SIK SORULAN SORULAR</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="nav-tabContent" style="padding-top:4%;padding-bottom:4%">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="row">
+                        <?php
+                        $counter = 0;
+                        //Burada yapılan şey ıd numarasında göre en son kaydedilen 3 hizmeti listeleme VeriGetir("hizmetler", "WHERE durum=?", array(1), "ORDER BY ID DESC",5) yazsaydık 5 tane listeleyecekti DESC ise sondan başla demek
+                        $hizmetler = $VT->VeriGetir("hizmetler", "WHERE durum=?", array(1), "ORDER BY ID DESC", 4);
+                        if ($hizmetler != false) {
+                            for ($i = 0; $i < count($hizmetler); $i++) {
+                                if (!empty($hizmetler[$i]["resim"])) {
+                                    $resim = $hizmetler[$i]["resim"];
+                                } else {
+                                    $resim = 'varsayilan.png';
+                                }
+                        ?>
+                                <div class="col-xl-3 col-md-4 col-lg-3" onclick="location.href='<?= SITE ?>hizmet-detay/<?= $hizmetler[$i]['selflink'] ?>';">
+                                    <div class="single_explorer">
+                                        
+                                        <div class="explorer_bottom d-flex">
+                                            <div class="icon" style="background-color:white ;">
+                                                <i class="fa fa-newspaper-o" aria-hidden="true" style="color: black;"></i>
+                                            </div>
+                                            <div class="explorer_info">
+                                                <h3>
+                                                    <a href="<?= stripslashes($hizmetler[$i]["baslik"]) ?>">
+                                                        <h4><a href="<?= SITE ?>hizmet-detay/<?= $hizmetler[$i]["selflink"] ?>"><?= stripslashes($hizmetler[$i]["baslik"]) ?></a></h4>
+                                                        <p><?= mb_substr(strip_tags(stripslashes($hizmetler[$i]["metin"])), 0, 120, "UTF-8") ?>...</p>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                        <?php
+                            }
+                        }
+                        ?>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+            
             <!-- sprayed_area  -->
             <div class="sprayed_area overlay">
                 <div class="container">
@@ -276,3 +275,6 @@
                 </div>
             </div>
             <!-- /testimonial_area  -->
+        </div>
+    </div>
+</div>

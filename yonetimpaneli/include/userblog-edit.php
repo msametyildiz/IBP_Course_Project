@@ -20,7 +20,7 @@ if (!empty($_GET["tablo"]) && !empty($_GET["ID"])) {
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?=SITE?>">Anasayfa</a></li>
-              <li class="breadcrumb-item active">Blog Düzenleme Sayfası</li>
+              <li class="breadcrumb-item active">Söz Düzenleme Sayfası</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -76,8 +76,8 @@ if($_POST){
                     <!-- header in form -->
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label>Ad Soyad</label>
-                        <input type="text" class="form-control" placeholder="Ad Soyad ..." name="adsoyad" value="<?= stripslashes($veri[0]["adsoyad"]) ?>">
+                        <label>Kitap Adı</label>
+                        <input type="text" class="form-control" placeholder="Kitap Adı..." name="adsoyad" value="<?= stripslashes($veri[0]["adsoyad"]) ?>">
                       </div>
                     </div>
                     <!-- Text area-->
@@ -90,12 +90,7 @@ if($_POST){
                       </div>
                     </div>
 
-                    <!--pictures  -->
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Resimler</label>
-                        <input type="file" class="form-control" placeholder="Resim Seçiniz ..." name="resim" multiple>
-                      </div>
+                  
                     </div>
 
                     <div class="col-md-10">
