@@ -27,14 +27,12 @@
     </div>
 </div>
 <!--/ bradcam_area  -->
-
 <!-- about_mission  -->
 <div class="explorer_europe">
     <div class="container" style="padding-top:7%;padding-bottom:7%">
         <div class="row align-items-center">
             <?php
             $yayineviListesi = array(); // Yayınevi listesini tutmak için bir dizi tanımla
-
             if ($_POST) {
                 if (!empty($_POST["kelime"])) {
                     $kelime = $VT->filter($_POST["kelime"]);
@@ -45,13 +43,11 @@
             } else {
                 $yayinevi = $VT->VeriGetir("kitaplar", "WHERE durum=?", array(1), "ORDER BY sirano ASC");
             }
-
             if ($yayinevi != false) {
                 foreach ($yayinevi as $kitap) {
                     // Yayınevi daha önce listeye eklenmediyse ekle
                     if (!in_array($kitap['yayinevi'], $yayineviListesi)) {
                         $yayineviListesi[] = $kitap['yayinevi']; // Yayınevi listesine ekle
-
                         // Yayınevi bilgilerini görüntüle
                         ?>
                         <div class="col-xl-4 col-lg-4 col-md-6" style="max-width:380px; max-height:392px;" onclick="location.href='<?= SITE ?>yayinevi-detay/<?= $kitap['yayineviselflink'] ?>';">
