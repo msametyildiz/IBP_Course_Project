@@ -10,7 +10,7 @@
                             <div class="row align-items-center" style="padding-top:10%;">
                                 <div class="col-xl-5 col-md-4" style="margin-left:25%;">
                                     <div class="input_field">
-                                        <input type="text" class="form-control" name="kelime" placeholder="Aramak istediğiniz yayıneviy?" required="required">
+                                        <input type="text" class="form-control" name="kelime" placeholder="Aramak istediğiniz yayınevi nedir?" required="required">
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-md-4">
@@ -27,6 +27,7 @@
     </div>
 </div>
 <!--/ bradcam_area  -->
+
 <!-- about_mission  -->
 <div class="explorer_europe">
     <div class="container" style="padding-top:7%;padding-bottom:7%">
@@ -36,14 +37,17 @@
             if ($_POST) {
                 if (!empty($_POST["kelime"])) {
                     $kelime = $VT->filter($_POST["kelime"]);
-                    $yayinevi = $VT->VeriGetir("kitaplar", "WHERE durum=? AND (yayinevi LIKE ? OR metin LIKE ?)", array(1, '%' . $kelime . '%', '%' . $kelime . '%'), "ORDER BY sirano ASC");
+                    $yayinevi = $VT->VeriGetir("kitaplar", "WHERE durum=? AND (yayineviselflink LIKE ? OR yayinevi LIKE ?)", array(1, '%' . $kelime . '%', '%' . $kelime . '%'), "ORDER BY sirano ASC");
+                    if(empty($yayinevi)){
+
+                    }
                 } else {
                     $yayinevi = $VT->VeriGetir("kitaplar", "WHERE durum=?", array(1), "ORDER BY sirano ASC");
                 }
             } else {
                 $yayinevi = $VT->VeriGetir("kitaplar", "WHERE durum=?", array(1), "ORDER BY sirano ASC");
             }
-            if ($yayinevi != false) {
+            if (!empty($yayinevi)) {
                 foreach ($yayinevi as $kitap) {
                     // Yayınevi daha önce listeye eklenmediyse ekle
                     if (!in_array($kitap['yayinevi'], $yayineviListesi)) {
@@ -65,6 +69,14 @@
                         <?php
                     }
                 }
+            }
+            else {
+                // Hiçbir öge bulunamadıysa mesajı görüntüle
+                ?>
+                <div class="col-xl-12 text-center">
+                    <p>Bu kriterlere uygun kayıt bulunamadı.</p>
+                </div>
+                <?php
             }
             ?>
         </div>

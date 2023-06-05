@@ -1,6 +1,6 @@
 <?php
-    if(!empty($_GET["yayineviselflink"])){
-        $selflink=$VT->filter($_GET["yayineviselflink"]);
+    if(!empty($_GET["selflink"])){
+        $selflink=$_GET["selflink"];
         $veri=$VT->VeriGetir("kitaplar","WHERE yayineviselflink=? AND durum=?",array($selflink,1),"ORDER BY ID ASC",1);
         if($veri!=false){
 ?>

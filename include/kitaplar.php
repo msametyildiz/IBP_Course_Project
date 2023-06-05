@@ -18,7 +18,6 @@ if (!empty($_GET["selflink"])) {
    </div>
    <!--/ bradcam_area  -->
    
-<!-- about_mission  -->
 <div class="explorer_europe">
     <div class="container" style="margin-top:7%;padding-bottom:7%">
    <div class="row align-items-center">
@@ -40,7 +39,7 @@ if (!empty($_GET["selflink"])) {
                         </div>
                         <div class="explorer_info">
                             <h3><a href="<?=SITE?>kitap-detay/<?=$kitaplar[$i]["selflink"]?>"><?=stripslashes($kitaplar [$i]["baslik"])?></a></h3>
-                            <p><?=mb_substr(strip_tags(stripslashes($kitaplar[$i]["yazar"])),0,120,"UTF-8")?></p>
+                            <p><?=mb_substr(strip_tags(stripslashes($kitaplar[$i]["yazar"])),0,120,"UTF-8")?> <span class="fiyat"><?=$kitaplar[$i]["fiyat"]?> TL</span></p>
                             
                         </div>
                     </div>
@@ -59,3 +58,10 @@ if (!empty($_GET["selflink"])) {
     }
 }
 ?>
+<style>
+    .fiyat {
+        font-weight: bold;
+        color: #000000; /* Koyu renk kodunu buraya yazabilirsiniz */
+        text-align: right;
+    }
+</style>
