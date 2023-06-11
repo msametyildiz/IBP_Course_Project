@@ -147,7 +147,7 @@ class VT{
 		return $donustur;
 	}
 //--------------------------------------------------------------------------------------------------------------------------------------
-	public function upload($nesnename,$yuklenecekyer='images/',$tur='img',$w='',$h='',$resimyazisi='')
+	/*public function upload($nesnename,$yuklenecekyer='images/',$tur='img',$w='',$h='',$resimyazisi='')
 	{
 		if($tur=="img")
 		{
@@ -262,7 +262,7 @@ class VT{
 		{
 			return false;
 		}
-	}
+	}*/
 
 	//--------------------------------------------------------------------------------------------------------------------------------------
 	public function kategoriGetir($tablo,$secID="",$uz=-1){
@@ -307,48 +307,11 @@ class VT{
 			return false;
 		}
 	}
-//--------------------------------------------------------------------------------------------------------------------------------------
-	/*public function MailGonder($mail,$konu="",$mesaj)
-	{
-			$posta = new PHPMailer();
-			$posta->CharSet = "UTF-8";
-			 $posta->IsSMTP();                                   // send via SMTP
-			 $posta->Host     = 	"$siteURL"; // SMTP servers
-			 $posta->SMTPAuth = true;     // turn on SMTP authentication
-			 $posta->Username = "mail@siteadi.com";  // SMTP username
-			 $posta->Password = "mailsifresi"; // SMTP password
-			 $posta->Port     = 587; 
-			 $posta->From     = "mail@siteadi.com"; // smtp kullanýcý adýnýz ile ayný olmalý
-			 $posta->Fromname = "mail@siteadi.com";
-			 $posta->AddAddress($mail, "mail@siteadi.com");
-			 $posta->Subject  =  $konu;
-			 $posta->Body     =  $mesaj;
-			 
-			 if(!$posta->Send())
-			 {
-			   return false;
-			 }
-			 else
-			 {
-				 return true;
-			 }
 
-	}*/
-	
-		public function MailGonder($sitemail,$konu,$mesaj)
-	{
-		$to = "recipient@example.com";
-		$subject = "$konu";
-		$message = "$mesaj";
-		$headers = "From: $sitemail";
+		
 
-		if (mail($to, $subject, $message, $headers)) {
-		    echo "Email sent successfully.";
-		} else {
-		    echo "Email failed to send.";
-		}
-
-	}
-
+		
+		
+		
 }
 ?>

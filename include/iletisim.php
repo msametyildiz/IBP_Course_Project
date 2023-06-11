@@ -19,6 +19,10 @@
         <h3 id="h3iletisim">İletişim</h3>
         <form action="#" method="post">
         <?php
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\SMTP;
+        use PHPMailer\PHPMailer\Exception;
+        require 'inc/config.php';
             if($_POST){
                 if(!empty($_POST["adsoyad"])&& !empty($_POST["telefon"]) && !empty($_POST["mail"]) && !empty($_POST["konu"]) && !empty($_POST["mesaj"])){
                     $adsoyad=$VT->filter($_POST["adsoyad"]);
@@ -26,8 +30,7 @@
                     $mail=$VT->filter($_POST["mail"]);
                     $konu=$VT->filter($_POST["konu"]);
                     $mesaj=$VT->filter($_POST["mesaj"]);
-                    include_once(SINIF."class.phpmailer.php");
-                    include_once(SINIF."class.smtp.php");
+                    
                     $ekle=$VT->SorguCalistir("INSERT INTO iletisim (`adsoyad`, `telefon`, `mail`, `konu`, `mesaj`) VALUES ('$adsoyad','$telefon','$mail','$konu','$mesaj')");
                     if($ekle!=false){
                         echo '<div class="alert alert-success">Veritabanına ekleme işlemi başarılı...</div>';
@@ -35,15 +38,60 @@
                     else{
                         echo '<div class="alert alert-danger">Veritabanına ekleme işlemi başarısız...</div>';
                     }
-                    $metin=$konu."Ad Soyad : ".$adsoyad." Mail Adresi : ".$mail." Telefon Numarası : ".$telefon." Mesaj : ".$mesaj;
                     
-                    $maililet=$VT->MailGonder($sitemail,$konu,$metin);
-                    if($maililet!=false){
-                        echo '<div class="alert alert-success">Mesajınız Başarıyla İletilmiştir. </div>';
-                    }
-                    else{
-                        echo '<div class="alert alert-danger">Mesaj Gönderme İşlemi Başarısız. Lütfen Daha Sonra Tekrar Deneyiniz...</div>';
-                    }
+                    $mail_icerik = "Merhaba yönetici, sitenizden yeni bir iletişim formu gönderildi. Bilgileri aşağıdadır.";
+                    $mail_icerik .= "Adı Soyadı: $adsoyad<br>";
+                    $mail_icerik .= "Telefon: $telefon<br>";
+                    $mail_icerik .= "E-mail: $mail<br>";
+                    $mail_icerik .= "Konu: $konu<br>";
+                    $mail_icerik .= "Mesaj: $mesaj<br>";
+
+	require 'phpmailler/src/Exception.php';
+	require 'phpmailler/src/PHPMailer.php';
+	require 'phpmailler/src/SMTP.php';
+
+
+
+	$mail = new PHPMailer(true);
+
+	try {
+
+		$mail->SMTPDebug = 0;                      // Enable verbose debug output
+		$mail->isSMTP();                                            // Send using SMTP
+		$mail->Host       = 'ssl://smtp.gmail.com';                    // Set the SMTP server to send through
+		$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+		$mail->Username   = 'samet.saray.06@gmail.com';                     // SMTP username
+		$mail->Password   = 'sazjvbfajhwnketb';                               // SMTP password
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+		$mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+		$mail->SMTPOptions = array(
+			'ssl' => array(
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+				'allow_self_signed' => true
+			)
+		);
+
+		//Recipients
+		$mail->setFrom('samet.saray.06@gmail.com', 'iletisim - formu');
+		$mail->addAddress('samet.saray.06@gmail.com', 'MUHAMMED SAMET YILDIZ');     
+
+
+
+		$mail->isHTML(true);  
+		$mail->CharSet = 'UTF-8';                 
+		$mail->Subject = 'Sitenizden iletisim formu gönderildi.';
+		$mail->Body    = $mail_icerik;
+		$mail->AltBody = $mail_icerik;
+
+		$mail->send();
+		
+	} 
+	catch (Exception $e) {
+		echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		die();
+	}
                 }
                 else{
                     echo '<div class="alert alert-danger">Boş bırktığını alanı doldurunuz</div>';

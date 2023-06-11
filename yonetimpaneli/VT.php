@@ -150,7 +150,7 @@ class VT{
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------
-	public function upload($nesnename,$yuklenecekyer='images/',$tur='img',$w='',$h='',$resimyazisi='')
+	/*public function upload($nesnename,$yuklenecekyer='images/',$tur='img',$w='',$h='',$resimyazisi='')
 	{
 		if($tur=="img")
 		{
@@ -266,7 +266,7 @@ class VT{
 			return false;
 		}
 	}
-
+*/
 	//--------------------------------------------------------------------------------------------------------------------------------------
 	public function kategoriGetir($tablo,$secID="",$uz=-1){
 		$uz+1;
