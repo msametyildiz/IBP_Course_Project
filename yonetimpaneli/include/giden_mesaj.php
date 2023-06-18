@@ -3,7 +3,7 @@
 if (!empty($_GET["tablo"])) {
 
   $tablo = $VT->filter($_GET["tablo"]);
-
+  
   $kontrol = $VT->VeriGetir("moduller", "WHERE tablo=? ", array($tablo), "ORDER BY ID ASC", 1);
 
   if ($kontrol != false) {
@@ -26,7 +26,7 @@ if (!empty($_GET["tablo"])) {
 
             <div class="col-sm-6">
 
-              <h1 class="m-0">İletişim</h1>
+              <h1 class="m-0">Gönderilen Mesajlar</h1>
 
             </div><!-- /.col -->
 
@@ -36,7 +36,7 @@ if (!empty($_GET["tablo"])) {
 
                 <li class="breadcrumb-item"><a href="<?= SITE ?>">Anasayfa</a></li>
 
-                <li class="breadcrumb-item active">İletişim</li>
+                <li class="breadcrumb-item active">Gönderilen Mesajlar</li>
 
               </ol>
 
@@ -82,9 +82,9 @@ if (!empty($_GET["tablo"])) {
                     <th style="width:20%;">Ad Soyad</th>
                     <th >Mesaj</th>
 
-                    <th style="width:80px;">Tarih</th>
+                    <th style="width:90px;">Tarih</th>
 
-                    <th style="width:120px;">İşlem</th>
+                    <th style="width:100px;">İşlem</th>
 
                   </tr>
 
@@ -96,7 +96,7 @@ if (!empty($_GET["tablo"])) {
 
                   <?php
 
-                  $veriler = $VT->VeriGetir("iletisim", "", "", "ORDER BY ID DESC");
+                  $veriler = $VT->VeriGetir("iletisimcevap", "", "", "ORDER BY ID DESC");
 
                   if ($veriler != false) {
 
@@ -132,10 +132,9 @@ echo '<br/>' . mb_substr(strip_tags(stripslashes($veriler[$i]["mesaj"])), 0, 130
 
                         <td>
 
-                          <a href="<?= SITE ?>iletisim.cevapla/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-warning btn-sm">Cevapla</a>
+                          <a href="<?= SITE ?>mesaj_detay/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-warning btn-sm">Detay</a>
 
-                          <a href="<?= SITE ?>iletisimCevapSil/<?= $kontrol[0]["tablo"] ?>/<?= $veriler[$i]["ID"] ?>" class="btn btn-danger btn-sm">Sil</a>
-
+                          
                         </td>
 
                       </tr>

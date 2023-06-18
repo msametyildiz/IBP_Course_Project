@@ -130,13 +130,26 @@
             ?>
              <a href="<?= SITE ?>iletisim.y/<?= $moduller[0]["tablo"] ?>" class="nav-link">
                <i class="nav-icon fas fa-th"></i>
-               <p>İletişim<span class="right badge badge-danger"></span></p>
+               <p>Mesajlar<span class="right badge badge-danger"></span></p>
              </a>
            <?php
             }
             ?>
          </li>
          
+         <li class="nav-item">
+           <?php
+            $moduller = $VT->VeriGetir("moduller", "WHERE tablo=?", array("iletisimcevap"), "ORDER BY ID ASC");
+            if ($moduller != false) {
+            ?>
+             <a href="<?= SITE ?>giden_mesaj/<?= $moduller[0]["tablo"] ?>" class="nav-link">
+               <i class="nav-icon fas fa-th"></i>
+               <p>Giden Mesajlar<span class="right badge badge-danger"></span></p>
+             </a>
+           <?php
+            }
+            ?>
+         </li>
          <li class="nav-item">
            <a href="<?= SITE ?>seo-ayarlari" class="nav-link">
              <i class="nav-icon fas fa-th"></i>

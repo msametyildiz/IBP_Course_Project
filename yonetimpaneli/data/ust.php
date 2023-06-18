@@ -54,18 +54,16 @@
 
 
         <?php
-            $ilet = $VT->VeriGetir("iletisim", "", array(), "ORDER BY ID ASC");
+            $ilet = $VT->VeriGetir("iletisim", "", array(), "ORDER BY ID DESC",3);
             if ($ilet != false) {
                 for ($i = 0; $i < count($ilet); $i++) {
             ?>
-          <a href="#" class="dropdown-item">
+          <a href="<?= SITE ?>iletisim.cevapla/iletisim/<?= $ilet[$i]["ID"] ?>" class="dropdown-item">
             <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+            <div class="media"  >
+              <img src="dist/img/userspic.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
-                <h3 class="dropdown-item-title">
-                <?= $ilet[$i]["adsoyad"] ?>
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                <h3 class="dropdown-item-title"><?= $ilet[$i]["adsoyad"] ?><span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                 </h3>
                 <p class="text-sm"><?php echo '<br/>' . mb_substr(strip_tags(stripslashes($ilet[$i]["mesaj"])), 0, 30, "UTF-8") . "...";/*strip_tags -> html taglarını temizliyor*/ ?></p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> <?php
@@ -93,7 +91,7 @@
           
 
           
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          <a href="<?= SITE ?>iletisim.y/iletisim" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->

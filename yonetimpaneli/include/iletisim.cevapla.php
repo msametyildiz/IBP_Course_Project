@@ -57,7 +57,7 @@ if (!empty($_GET["tablo"]) && !empty($_GET["ID"])) {
                                 $gelenmesaj = $VT->filter($_POST["gelenmesaj"]);
                                 $mesaj = $VT->filter($_POST["mesaj"], true); //true yazılmasının sebebi editor kullnıldığı için html komutlarını temizlemesini istemiyorum
 
-                                $ekle = $VT->SorguCalistir("INSERT INTO iletisim_cevap", "SET adsoyad=?, mesaj=?, durum=?, tarih=?", array($adsoyad, $mesaj, 1, date("Y-m-d")));
+                                $ekle = $VT->SorguCalistir("INSERT INTO iletisimcevap", "SET adsoyad=?, mesaj=?, durum=?, tarih=?", array($adsoyad, $mesaj, 1, date("Y-m-d")));
 
                                 if ($ekle != false) {
                         ?>
@@ -209,7 +209,7 @@ if (!empty($_GET["tablo"]) && !empty($_GET["ID"])) {
         <?php
         } else {
         ?>
-            <meta http-equiv="refresh" content="0;url=<?= SITE ?>liste/<?= $kontrol[0]["tablo"] ?>">
+            <meta http-equiv="refresh" content="0;url=<?= SITE ?>iletisim.y/<?= $kontrol[0]["tablo"] ?>">
         <?php
         }
     } else {
