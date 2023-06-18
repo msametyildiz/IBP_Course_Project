@@ -31,9 +31,9 @@
                     $konu=$VT->filter($_POST["konu"]);
                     $mesaj=$VT->filter($_POST["mesaj"]);
                     
-                    $ekle=$VT->SorguCalistir("INSERT INTO iletisim (`adsoyad`, `telefon`, `mail`, `konu`, `mesaj`) VALUES ('$adsoyad','$telefon','$mail','$konu','$mesaj')");
+                    $ekle = $VT->SorguCalistir("INSERT INTO iletisim (`adsoyad`, `telefon`, `mail`, `konu`, `mesaj`,`durum`, `tarih`) VALUES ('$adsoyad', '$telefon', '$mail', '$konu', '$mesaj',1, CURDATE())");
                     if($ekle!=false){
-                        echo '<div class="alert alert-success">Veritabanına ekleme işlemi başarılı...</div>';
+                        echo '<div class="alert alert-success">İşlem Başarılı...</div>';
                     }
                     else{
                         echo '<div class="alert alert-danger">Veritabanına ekleme işlemi başarısız...</div>';
@@ -46,13 +46,13 @@
                     $mail_icerik .= "Konu: $konu<br>";
                     $mail_icerik .= "Mesaj: $mesaj<br>";
 
-	require 'phpmailler/src/Exception.php';
-	require 'phpmailler/src/PHPMailer.php';
-	require 'phpmailler/src/SMTP.php';
+	                require 'phpmailler/src/Exception.php';
+	                require 'phpmailler/src/PHPMailer.php';
+	                require 'phpmailler/src/SMTP.php';
 
 
 
-	$mail = new PHPMailer(true);
+	                $mail = new PHPMailer(true);
 
 	try {
 
@@ -96,6 +96,7 @@
                 else{
                     echo '<div class="alert alert-danger">Boş bırktığını alanı doldurunuz</div>';
                 }
+               ?> <meta http-equiv="refresh" content="2;url=<?= SITE ?>iletisim"><?php
             }
             
             ?>

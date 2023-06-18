@@ -47,6 +47,7 @@ RewriteRule ^kullanici-duzenle/(.*)$ index.php?sayfa=kullanici-duzenle&ID=$1  [N
 RewriteRule ^kullanici-liste/(.*)$ index.php?sayfa=kullanici-liste&tablo=$1 [NC]
 RewriteRule ^kullanici-sil/(.*)/(.*)$ index.php?sayfa=kullanici-sil&tablo=$1&ID=$2  [NC]
 RewriteRule ^iletisim.y/(.*)$ index.php?sayfa=iletisim.y&tablo=$1 [NC]
+RewriteRule ^iletisim.cevapla/(.*)/(.*)$ index.php?sayfa=iletisim.cevapla&tablo=$1&ID=$2  [NC]
 
 RewriteRule ^giris-yap$ login.php [NC]
 RewriteRule ^cikis$ index.php?sayfa=cikis [NC]

@@ -18,17 +18,17 @@
                                         <li><a href="<?= SITE ?>">ANASAYFA</a></li>
                                         <li><a href="#">KURUMSAL <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <?php
-                                                $kurumsal = $VT->VeriGetir("kurumsal", "WHERE durum=?", array(1), "ORDER BY sirano ASC");
-                                                //(LıNE 23)  kurumsal tablosundan alınmasını istedim,  "eğer durumu = 1 olan kısımı getir diyorum",sıra numarasında göre  sıralamasını istediğimi belirttim. herhangi bir limit işlemi yapmıyorum
-                                                if ($kurumsal != false) { //eğer bir değer var ise
-                                                    for ($i = 0; $i < count($kurumsal); $i++) {
-                                                ?>
-                                                        <li><a href="<?= SITE ?>kurumsal/<?= $kurumsal[$i]["selflink"] ?>"><?= stripslashes($kurumsal[$i]["baslik"]) ?></a></li>
-                                                <?php
+                                                    <?php
+                                                    $kurumsal = $VT->VeriGetir("kurumsal", "WHERE durum=?", array(1), "ORDER BY sirano ASC");
+                                                    //(LıNE 23)  kurumsal tablosundan alınmasını istedim,  "eğer durumu = 1 olan kısımı getir diyorum",sıra numarasında göre  sıralamasını istediğimi belirttim. herhangi bir limit işlemi yapmıyorum
+                                                    if ($kurumsal != false) { //eğer bir değer var ise
+                                                        for ($i = 0; $i < count($kurumsal); $i++) {
+                                                    ?>
+                                                            <li><a href="<?= SITE ?>kurumsal/<?= $kurumsal[$i]["selflink"] ?>"><?= stripslashes($kurumsal[$i]["baslik"]) ?></a></li>
+                                                    <?php
+                                                        }
                                                     }
-                                                }
-                                                ?>
+                                                    ?>
                                             </ul>
                                         </li>
                                         <li><a href="#">KİTAP <i class="ti-angle-down"></i></a>
