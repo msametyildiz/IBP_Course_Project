@@ -52,7 +52,7 @@ if (!empty($_GET["tablo"]) && !empty($_GET["ID"])) {
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Gönderilen Mesaj</label>
-                                                <textarea class="form-control" placeholder="Gönderilen Mesaj" name="mesaj"><?= stripslashes($veri[0]["mesaj"]) ?></textarea>
+                                                <textarea class="form-control" placeholder="Gönderilen Mesaj" name="mesaj"><?= strip_tags(stripslashes($veri[0]["mesaj"])) ?></textarea>
                                             </div>
                                         </div>
                                         
